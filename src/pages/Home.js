@@ -12,14 +12,14 @@ function Home() {
       
       <div className="mt-5">
         <h2 className="text-lg font-medium mb-2 text-gray-200">Quick Links</h2>
-        <ul className="list-disc list-inside list-none">
+        <ul className="list-inside list-none">
           <li>
-            <a href="/transactions" className="text-[#B4D4FF] hover:underline">
+            <a href="/" className="text-[#B4D4FF] hover:underline">
               View Transactions
             </a>
           </li>
           <li>
-            <a href="/payments" className="text-[#B4D4FF] hover:underline">
+            <a href="/" className="text-[#B4D4FF] hover:underline">
               Make a Payment
             </a>
           </li>
