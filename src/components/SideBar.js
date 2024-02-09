@@ -7,6 +7,7 @@ import { FaHome } from "react-icons/fa";
 import { IoDocumentTextSharp } from "react-icons/io5";
 import { MdPayment } from "react-icons/md";
 import { FaLocationArrow } from "react-icons/fa";
+import { Link, Outlet } from 'react-router-dom';
 
 function SideBar() {
     const [open,setOpen]=useState(true);
@@ -19,7 +20,7 @@ function SideBar() {
     {title:"Payout Links",icon:<FaLocationArrow/>},
   ]
   return (
-    
+    <>
       <div className={`bg-dark-purple h-screen p-5 pt-8 ${open ? "w-72" : "w-20"} duration-300 relative`}>
         <BsArrowLeft className={`bg-white text-dark-purple text-3xl rounded-full absolute -right-3
         top-9 border border-dark-purple cursor-pointer ${!open && "rotate-180"}`} onClick={()=>setOpen(!open)}/>
@@ -32,7 +33,7 @@ function SideBar() {
         <ul className="pt-4">
           {
             Menu.map((menu,i)=>(
-              <>
+              <Link to='/'>
               <li className="text-gray-300 text-sm flex items-center
               gap-x-4 cursor-pointer p-2 
               hover:bg-light-white rounded-md mt-2" key={i}>
@@ -42,7 +43,7 @@ function SideBar() {
                   <span className={`text-base
                   font-medium flex-1 ${!open && "hidden"} duration-200`}>{menu.title}</span>
               </li>
-              </>
+              </Link>
             )
                   
             )
@@ -50,6 +51,8 @@ function SideBar() {
 
         </ul>
       </div>
+      <Outlet/>
+      </>
   )
 }
 
